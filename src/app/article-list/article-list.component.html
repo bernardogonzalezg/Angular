@@ -1,0 +1,21 @@
+<h1>Listado de Articulos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles" [ngClass]="{'clearance' : article.clearance}">
+            <td><img [src]="article.image" [alt]="article.name"></td>
+            <td>{{article.name}}</td>
+            <td>{{article.category}}</td>
+            <td>{{article.price | currency}}</td>
+            <td><span class="badge text-bg-warning" *ngIf="article.stock==0">SIN STOCK</span></td>
+        </tr>
+    </tbody>
+</table>
