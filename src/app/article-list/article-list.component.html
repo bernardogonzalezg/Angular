@@ -1,5 +1,5 @@
 <h1>Listado de Articulos</h1>
-<table class="table">
+<table class="table text-center">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -7,15 +7,25 @@
             <th>Categoria</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let article of articles" [ngClass]="{'clearance' : article.clearance}">
-            <td><img [src]="article.image" [alt]="article.name"></td>
+            <td><img width="90" class="img-thumbnail" 
+                [src]="article.image" [alt]="article.name"></td>
             <td>{{article.name}}</td>
             <td>{{article.category}}</td>
             <td>{{article.price | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="article.stock==0">SIN STOCK</span></td>
+            <td>
+                <div class="input-group" *ngIf="article.stock">
+                    <button class="btn btn-primary btn-sm" (click)="downQuantity(article)">-</button>
+                    <input type="number" [(ngModel)]="article.quantity"
+                    (keyup)="changeQuantity($event, article)">
+                    <button class="btn btn-primary btn-sm" (click)="upQuantity(article)">+</button>
+                </div>  
+            </td>
         </tr>
     </tbody>
 </table>
