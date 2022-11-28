@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
+
+import {HttpClientModule} from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { SupermercadoArticlesComponent } from './supermercado-articles/supermercado-articles.component';
 import { SupermercadoAboutComponent } from './supermercado-about/supermercado-about.component';
 import { CartComponent } from './cart/cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,14 @@ import { CartComponent } from './cart/cart.component';
     ArticleListComponent,
     SupermercadoArticlesComponent,
     SupermercadoAboutComponent,
-    CartComponent
+    CartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

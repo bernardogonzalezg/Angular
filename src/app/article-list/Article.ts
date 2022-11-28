@@ -7,3 +7,4 @@ export interface Article {
     clearance : boolean;
     quantity : number;
 }
+
