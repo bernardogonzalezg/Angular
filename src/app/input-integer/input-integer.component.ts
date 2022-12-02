@@ -40,10 +40,8 @@ export class InputIntegerComponent implements OnInit {
     }
   }
 
-  changeQuantity(event: { preventDefault: () => void; }) : void {
+  changeQuantity(event: { key : any;}) : void {
     if (this.quantity > this.max){
-      event.preventDefault();
-      this.quantity = this.max;
       this.quantityChange.emit(this.quantity);
     }
   }

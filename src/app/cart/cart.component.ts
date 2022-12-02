@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
   delete(article: Article) : void{
     
     this.cart.delete(article);
-        article.stock+= article.quantity;
+      article.stock+= article.quantity;
       
   }
 

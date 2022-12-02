@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { __values } from 'tslib';
 import { Article } from './article-list/Article';
 
 const jsLibraries = ['react', 'redux', 'vue', 'D3', 'Chart']
