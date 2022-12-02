@@ -15,6 +15,8 @@ export class ArticleListComponent implements OnInit {
 
   articles : Article[] = [];
 
+  carts : Article [] = [];
+
   constructor(
     private cart: ArticleCartService,
     private articlesDataService : ArticleDataService) {      

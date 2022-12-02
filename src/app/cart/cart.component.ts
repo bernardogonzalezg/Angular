@@ -8,6 +8,8 @@ import { Article } from '../article-list/Article';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
+
 export class CartComponent implements OnInit {
 
   cartList$: Observable<Article[]>;
@@ -17,6 +19,13 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  delete(article: Article) : void{
+    
+    this.cart.delete(article);
+        article.stock+= article.quantity;
+      
   }
 
 }
